@@ -1,9 +1,11 @@
+import { eventListenersModule} from "snabbdom";
 
-  export const init = (selector, component) => {
-    const app = document.querySelector(selector);
-    const newElement = document.createElement(component.type);
-    const newTextContent = document.createTextNode(component.template);
+const patch = snabbdom.init([
+  eventListenersModule
+]);
 
-    newElement.append(newTextContent);
-    app.append(newElement)
-  }
+export const init = (selector, component) => {
+  const app = document.querySelector(selector);
+
+  patch(app, component.template);
+}

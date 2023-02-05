@@ -5,6 +5,6 @@ import { User } from "./src/user";
 const firstname = "Diseyi";
 const lastname = "Philomena";
 
-// const {template} = div`Hello ${firstname} ${lastname} ! `
+const template = div`Hello ${firstname} ${lastname}!`
 
 init("#app", User({firstname, lastname}))
